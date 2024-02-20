@@ -79,8 +79,22 @@ function ManageMovie() {
           </select>
         </label>
         <label>
-          Show Dates and Times:
-          <input type="text" name="showDatesAndTimes" value={movie.showDatesAndTimes} onChange={handleChange} />
+          Show Dates:
+          <input 
+            type="date" 
+            name="showDates" 
+            value={movie.showDates} 
+            onChange={handleChange} 
+          />
+        </label>
+        <label>
+          Show Times:
+          <input 
+            type="time" 
+            name="showTimes" 
+            value={movie.showTimes} 
+            onChange={handleChange} 
+          />
         </label>
         <button type="submit">Submit</button>
       </form>

@@ -1,5 +1,6 @@
 // ManagePromotions.js
 import React, { useState } from 'react';
+import './ManagePromotions.css';
 
 function ManagePromotions() {
   const [promotion, setPromotion] = useState({
@@ -16,13 +17,13 @@ function ManagePromotions() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle the form submission here. In a real scenario, you might send the data to a server.
+    // Handle the form submission here. Send the data to a server.
     console.log(promotion);
     alert("Promotion submitted! (Not really, but it will when we hook up the backend.)");
   };
 
   return (
-    <div>
+    <div className='manage-promotions-container'>
       <h2>Manage Promotions</h2>
       <form onSubmit={handleSubmit}>
         <label>
