@@ -28,7 +28,7 @@ function ManageMovie() {
 
   return (
     <div>
-      <h2>Manage Movie</h2>
+      <h2>Manage Movies</h2>
       <form onSubmit={handleSubmit}>
         <label>
           Title:

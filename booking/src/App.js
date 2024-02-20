@@ -10,7 +10,7 @@ function App() {
     <Router>
       <div>
         <nav>
-          <Link to="/">Home</Link> | <Link to="/manage-movie">Manage Movie</Link>
+          <Link to="/">Home</Link> | <Link to="/manage-movie">Manage Movies</Link>
         </nav>
         <Routes>
           <Route path="/" element={<HomePage />} />

@@ -1,0 +1,36 @@
+/* HomePage.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+  
+  nav {
+    background-color: #01161E;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  nav a {
+    color: white;
+    text-decoration: none;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  nav a:hover {
+    background-color: #555;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #333;
+    margin-top: 50px;
+  }
+  
+  /* Additional styles for the homepage can go here */
+  
