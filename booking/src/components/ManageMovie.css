@@ -1,0 +1,52 @@
+/* ManageMovie.css */
+body {
+    background-color: #124559; /* Dark teal background */
+    color: #EFF6E0; /* Light text */
+    font-family: Arial, sans-serif;
+  }
+  
+  h2 {
+    color: #01161E; /* Darkest color for headers */
+  }
+  
+  form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #598392; /* Intermediate color for form background */
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"],
+  textarea,
+  select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    border: 1px solid #EFF6E0; /* Lightest color for borders */
+    background-color: #AEC3B0; /* Lighter color for input backgrounds */
+    color: #01161E; /* Dark text for readability */
+  }
+  
+  button {
+    padding: 10px 15px;
+    color: #EFF6E0; /* Light text */
+    background-color: #01161E; /* Darkest color for buttons */
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #124559; /* Dark teal for button hover */
+  }
+  
