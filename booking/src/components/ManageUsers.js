@@ -1,5 +1,6 @@
 // ManageUsers.js
 import React, { useState } from 'react';
+import './ManageUsers.css';
 
 function ManageUsers() {
   const [users, setUsers] = useState([
@@ -41,8 +42,9 @@ function ManageUsers() {
   };
 
   return (
-    <div>
+    <div className="manage-users">
       <h2>Manage Users</h2>
+      <div className="form-group">
       <form onSubmit={handleAddAdmin}>
         <h3>Add New Administrator</h3>
         <input type="text" name="name" placeholder="Full Name" value={newAdmin.name} onChange={handleNewAdminChange} />
@@ -50,9 +52,10 @@ function ManageUsers() {
         <input type="password" name="password" placeholder="Password" value={newAdmin.password} onChange={handleNewAdminChange} />
         <button type="submit">Add Admin</button>
       </form>
+      </div>
 
       <h3>Current Users</h3>
-      <table>
+      <table className="table-users">
         <thead>
           <tr>
             <th>Name</th>
@@ -69,7 +72,7 @@ function ManageUsers() {
               <td>{user.email}</td>
               <td>{user.role}</td>
               <td>{user.status}</td>
-              <td>
+              <td className="action-buttons">
                 <button onClick={() => handleUpdateUser(user.id)}>Update</button>
                 <button onClick={() => handleDeleteUser(user.id)}>Delete</button>
                 <button onClick={() => handleSuspendUser(user.id)}>{user.status === 'active' ? 'Suspend' : 'Activate'}</button>
