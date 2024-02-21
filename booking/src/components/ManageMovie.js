@@ -1,11 +1,12 @@
 import React, { useState, useContext } from 'react';
-import { MoviesContext } from './MoviesContext';
+import { MoviesContext } from './MoviesContext'; // Ensure this is the correct path
 import './ManageMovie.css';
 
 function ManageMovie() {
-    const { addMovie } = useContext(MoviesContext);
+  const { movies, addMovie, editMovie, deleteMovie } = useContext(MoviesContext);
 
-  const [movie, setMovie] = useState({
+  const initialState = {
+    id: null,
     title: '',
     category: '',
     cast: '',
@@ -14,11 +15,14 @@ function ManageMovie() {
     synopsis: '',
     reviews: '',
     poster: '',
-    tailer: '',
+    trailer: '',
     mpaaRating: '',
     showDates: '',
     showTimes: '',
-  });
+  };
+
+  const [movie, setMovie] = useState(initialState);
+  const [showForm, setShowForm] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,27 +31,34 @@ function ManageMovie() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addMovie(movie); // Add the movie to the context state
-    setMovie({ // Reset the form
-      title: '',
-      category: '',
-      cast: '',
-      director: '',
-      producer: '',
-      synopsis: '',
-      reviews: '',
-      poster: '',
-      trailer: '',
-      mpaaRating: '',
-      showDates: '',
-      showTimes: '',
-    });
+    if (movie.id) {
+      editMovie(movie);
+    } else {
+      addMovie({ ...movie, id: Date.now() }); // Use Date.now() for simplicity; replace with your ID generation strategy
+    }
+    setMovie(initialState);
+    setShowForm(false); // Hide the form after submission
+  };
+
+  const handleEdit = (movieToEdit) => {
+    setMovie(movieToEdit);
+    setShowForm(true); // Show the form for editing
+  };
+
+  const handleDelete = (id) => {
+    const confirmed = window.confirm("Are you sure you want to delete this movie?");
+    if (confirmed) {
+      deleteMovie(id);
+    }
   };
 
   return (
     <div>
-      <h2>Manage Movies</h2>
-      <form onSubmit={handleSubmit}>
+      <button onClick={() => { setMovie(initialState); setShowForm(true); }}>Add Movie</button>
+      {showForm ? (
+        <div>
+          <h2>{movie.id ? "Edit Movie" : "Add New Movie"}</h2>
+          <form onSubmit={handleSubmit}>
         <label>
           Title:
           <input type="text" name="title" value={movie.title} onChange={handleChange} />
@@ -127,8 +138,21 @@ function ManageMovie() {
             onChange={handleChange} 
           />
         </label>
-        <button type="submit">Add Movie</button>
+        <button type="submit">Submit</button>
       </form>
+    </div>
+      ) : (
+        <div>
+          <h3>Movie List</h3>
+          {movies.map((movie) => (
+            <div key={movie.id}>
+              <p>{movie.title}</p>
+              <button onClick={() => handleEdit(movie)}>Edit</button>
+              <button onClick={() => handleDelete(movie.id)}>Delete</button>
+            </div>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
