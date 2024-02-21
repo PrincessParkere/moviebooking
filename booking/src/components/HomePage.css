@@ -83,35 +83,41 @@ body {
   }
   
   .movie-card {
-    cursor: pointer;
     background-color: #598392; /* Intermediate color for card background */
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    cursor: pointer;
+    /* Add padding, margin, or other styles as needed */
   }
   
   .movie-poster {
     width: 100%;
-    height: auto;
-    transition: transform 0.3s ease;
+    display: block;
+    border-radius: 4px;
   }
-  
-  .movie-poster:hover {
-    transform: scale(1.05);
+
+  .movie-title {
+    text-align: center;
+    margin-top: 8px; /* Adjust spacing as needed */
+    color: #EFF6E0; /* Example color, adjust as needed */
+    font-size: 1rem; /* Adjust font size as needed */
   }
   
   .movie-info {
     padding: 10px;
-    color: #EFF6E0; /* Light text */
+    background-color: #01161E; /* Darkest color for movie info background */
+    color: #EFF6E0; /* Light text for movie info */
   }
   
-  .movie-info h2 {
-    margin: 0;
-    color: #EFF6E0; /* Light text for movie title */
+  /* Responsive iframe */
+  iframe {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9; /* Maintain a 16:9 aspect ratio for the video */
   }
   
-  .movie-info p {
-    margin: 0;
-    color: #EFF6E0; /* Light text for movie year */
-  }
+  /* ... additional styles ... */
+  
   
