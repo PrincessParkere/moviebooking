@@ -8,6 +8,12 @@ body {
   h2 {
     color: #01161E; /* Darkest color for headers */
   }
+
+  .back-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
   
   form {
     max-width: 600px;
@@ -16,6 +22,16 @@ body {
     background-color: #598392; /* Intermediate color for form background */
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .form-container h2 {
+    color: #EFF6E0; /* Light text for readability */
+    background-color: #124559; /* Dark teal background */
+    text-align: center;
+    padding: 10px 0;
+    margin-bottom: 20px; /* Space between the title and the form */
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds a subtle shadow for depth */
   }
   
   label {
