@@ -1,13 +1,14 @@
 /* HomePage.css */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #124559; /* Dark teal background */
+    color: #EFF6E0; /* Light text */
     margin: 0;
     padding: 0;
   }
   
   nav {
-    background-color: #01161E;
+    background-color: #01161E; /* Darkest color for navbar */
     color: white;
     padding: 10px 20px;
     display: flex;
@@ -28,9 +29,36 @@ body {
   
   h1 {
     text-align: center;
-    color: #333;
+    color: #EFF6E0; /* Light text for headers */
     margin-top: 50px;
   }
   
-  /* Additional styles for the homepage can go here */
+  /* Search Bar Styles */
+  .search-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .search-input {
+    width: 100%;
+    max-width: 600px; /* Maximum width of the search bar */
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #AEC3B0; /* Lighter color for border */
+    font-size: 16px;
+    color: #01161E; /* Dark text for readability */
+    background-color: #EFF6E0; /* Lightest color for input background */
+  }
+  
+  .search-input::placeholder {
+    color: #598392; /* Intermediate color for placeholder text */
+  }
+  
+  .search-input:focus {
+    outline: none;
+    border-color: #AEC3B0; /* Lighter color for border focus */
+  }
+  
+  /* Adjust the margins and padding as needed for your layout */
   
