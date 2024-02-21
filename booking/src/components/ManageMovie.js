@@ -1,7 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { MoviesContext } from './MoviesContext';
 import './ManageMovie.css';
 
 function ManageMovie() {
+    const { addMovie } = useContext(MoviesContext);
+
   const [movie, setMovie] = useState({
     title: '',
     category: '',
@@ -10,10 +13,11 @@ function ManageMovie() {
     producer: '',
     synopsis: '',
     reviews: '',
-    trailerPicture: '',
-    trailerVideo: '',
+    poster: '',
+    tailer: '',
     mpaaRating: '',
-    showDatesAndTimes: '',
+    showDates: '',
+    showTimes: '',
   });
 
   const handleChange = (e) => {
@@ -23,8 +27,21 @@ function ManageMovie() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle the form submission here. You might want to save the data to a database.
-    console.log(movie);
+    addMovie(movie); // Add the movie to the context state
+    setMovie({ // Reset the form
+      title: '',
+      category: '',
+      cast: '',
+      director: '',
+      producer: '',
+      synopsis: '',
+      reviews: '',
+      poster: '',
+      trailer: '',
+      mpaaRating: '',
+      showDates: '',
+      showTimes: '',
+    });
   };
 
   return (
@@ -60,12 +77,26 @@ function ManageMovie() {
           <textarea name="reviews" value={movie.reviews} onChange={handleChange} />
         </label>
         <label>
-          Trailer Picture (URL):
-          <input type="text" name="trailerPicture" value={movie.trailerPicture} onChange={handleChange} />
+          Poster URL:
+          <input 
+            type="text" 
+            name="poster" 
+            value={movie.poster} 
+            onChange={handleChange} 
+            placeholder="Enter URL for the movie poster" 
+          />
         </label>
+
+        {/* Input field for the movie trailer URL */}
         <label>
-          Trailer Video (URL):
-          <input type="text" name="trailerVideo" value={movie.trailerVideo} onChange={handleChange} />
+          Trailer URL:
+          <input 
+            type="text" 
+            name="trailer" 
+            value={movie.trailer} 
+            onChange={handleChange} 
+            placeholder="Enter YouTube URL for the trailer" 
+          />
         </label>
         <label>
           MPAA Rating:
@@ -96,7 +127,7 @@ function ManageMovie() {
             onChange={handleChange} 
           />
         </label>
-        <button type="submit">Submit</button>
+        <button type="submit">Add Movie</button>
       </form>
     </div>
   );

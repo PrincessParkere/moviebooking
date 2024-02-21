@@ -5,6 +5,7 @@ import HomePage from './components/HomePage';
 import ManageMovie from './components/ManageMovie';
 import ManagePromotions from './components/ManagePromotions';
 import ManageUsers from './components/ManageUsers';
+import { MoviesProvider } from './components/MoviesContext';
 
 function App() {
   const [isAdmin, setIsAdmin] = useState(false); // Replace this with actual authentication logic
@@ -19,6 +20,7 @@ function App() {
     setIsAdmin(false);
   };
   return (
+    <MoviesProvider>
     <Router>
       <div>
         <nav>
@@ -45,6 +47,7 @@ function App() {
         </Routes>
       </div>
     </Router>
+    </MoviesProvider>
   );
 }
 

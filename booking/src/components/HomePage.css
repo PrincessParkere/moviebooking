@@ -60,5 +60,45 @@ body {
     border-color: #AEC3B0; /* Lighter color for border focus */
   }
   
-  /* Adjust the margins and padding as needed for your layout */
+  /* Adjust the margins and padding as needed */
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .movie-card {
+    cursor: pointer;
+    background-color: #598392; /* Intermediate color for card background */
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .movie-poster {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+  
+  .movie-poster:hover {
+    transform: scale(1.05);
+  }
+  
+  .movie-info {
+    padding: 10px;
+    color: #EFF6E0; /* Light text */
+  }
+  
+  .movie-info h2 {
+    margin: 0;
+    color: #EFF6E0; /* Light text for movie title */
+  }
+  
+  .movie-info p {
+    margin: 0;
+    color: #EFF6E0; /* Light text for movie year */
+  }
   
