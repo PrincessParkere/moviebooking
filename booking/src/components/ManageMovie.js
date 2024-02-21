@@ -54,9 +54,9 @@ function ManageMovie() {
 
   return (
     <div>
-      <button onClick={() => { setMovie(initialState); setShowForm(true); }}>Add Movie</button>
+      <button className='add-movie-button' onClick={() => { setMovie(initialState); setShowForm(true); }}>Add Movie</button>
       {showForm ? (
-        <div>
+        <div className='form-container'>
           <h2>{movie.id ? "Edit Movie" : "Add New Movie"}</h2>
           <form onSubmit={handleSubmit}>
         <label>
@@ -97,7 +97,6 @@ function ManageMovie() {
             placeholder="Enter URL for the movie poster" 
           />
         </label>
-
         {/* Input field for the movie trailer URL */}
         <label>
           Trailer URL:
@@ -142,10 +141,10 @@ function ManageMovie() {
       </form>
     </div>
       ) : (
-        <div>
+        <div className='movie-list-container'>
           <h3>Movie List</h3>
           {movies.map((movie) => (
-            <div key={movie.id}>
+            <div key={movie.id} className='movie-item'>
               <p>{movie.title}</p>
               <button onClick={() => handleEdit(movie)}>Edit</button>
               <button onClick={() => handleDelete(movie.id)}>Delete</button>
