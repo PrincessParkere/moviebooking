@@ -37,18 +37,19 @@ body {
   .search-container {
     display: flex;
     justify-content: center;
-    margin: 20px 0;
+    padding: 20px;
   }
   
   .search-input {
-    width: 100%;
-    max-width: 600px; /* Maximum width of the search bar */
+    width: 50%; /* Make the search bar take up half the width of its container */
     padding: 10px;
-    border-radius: 5px;
-    border: 2px solid #AEC3B0; /* Lighter color for border */
-    font-size: 16px;
-    color: #01161E; /* Dark text for readability */
-    background-color: #EFF6E0; /* Lightest color for input background */
+    margin: 0 auto; /* Center the search bar within the search-container */
+    border-radius: 20px; /* Rounded corners for the search bar */
+    border: 2px solid #AEC3B0; /* Border color from your theme */
+    background-color: #EFF6E0; /* Background color from your theme */
+    color: #01161E; /* Text color from your theme */
+    font-size: 16px; /* Slightly larger font size for better readability */
+    outline: none;
   }
   
   .search-input::placeholder {
@@ -56,8 +57,20 @@ body {
   }
   
   .search-input:focus {
-    outline: none;
-    border-color: #AEC3B0; /* Lighter color for border focus */
+    border-color: #124559; /* Dark teal color for border when the input is focused */
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .search-input {
+      width: 70%; /* Increase the width of the search bar on smaller screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .search-input {
+      width: 90%; /* Further increase the width of the search bar on very small screens */
+    }
   }
   
   /* Adjust the margins and padding as needed */

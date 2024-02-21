@@ -21,6 +21,7 @@ function HomePage() {
       <h1>Movie Ticket Booking Website</h1>
       <div className="search-container">
         <input
+        className='search-input'
           type="text"
           placeholder="Search for movies..."
           value={searchTerm}
