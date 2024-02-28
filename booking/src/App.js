@@ -34,6 +34,12 @@ function App() {
           ) : (
             <button onClick={handleLogout}>Logout</button>
           )}
+          {!isAdmin && (
+              <>
+                <a href="/Login.html" className="nav-link">Login</a>
+                <a href="/Signup.html" className="nav-link">Signup</a>
+              </>
+            )}
         </nav>
         <Routes>
           <Route path="/" element={<HomePage />} />
