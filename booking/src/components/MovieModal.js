@@ -38,7 +38,7 @@ const MovieModal = ({ movie, onClose }) => {
         <p><strong>Show Dates:</strong> {formatDates(movie.showDates)}</p>
         <p><strong>Show Times:</strong> {formatTimes(movie.showTimes)}</p>
         {/* Booking button */}
-        <a href="/CheckOut.html" className="booking-button">Book Now</a>
+        <a href="/SeatBooking.html" className="booking-button">Book Now</a>
         <button className="close-button" onClick={onClose}>Close</button>
       </div>
     </div>
