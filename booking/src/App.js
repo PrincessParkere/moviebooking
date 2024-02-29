@@ -38,6 +38,7 @@ function App() {
               <>
                 <a href="/Login.html" className="nav-link">Login</a>
                 <a href="/Signup.html" className="nav-link">Signup</a>
+                <a href="/EditProfile.html" className="nav-link">Profile</a>
               </>
             )}
         </nav>
