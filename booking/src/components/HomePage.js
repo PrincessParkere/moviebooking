@@ -59,7 +59,7 @@ function HomePage() {
         />
       </div>
       <section>
-        <h2>Showing Now</h2>
+        <h2 className="section-heading">Showing Now</h2>
         <div className="movie-grid">
           {filteredShowingNowMovies.map((movie, index) => (
             <div key={index} className="movie-card" onClick={() => openModal(movie)}>
@@ -70,7 +70,7 @@ function HomePage() {
         </div>
       </section>
       <section>
-        <h2>Coming Soon</h2>
+        <h2 className="section-heading">Coming Soon</h2>
         <div className="movie-grid">
           {filteredComingSoonMovies.map((movie, index) => (
             <div key={index} className="movie-card" onClick={() => openModal(movie)}>
