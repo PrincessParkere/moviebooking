@@ -3,7 +3,7 @@ import React from 'react';
 import './MovieModal.css'; 
 
 const MovieModal = ({ movie, onClose }) => {
-   const extractVideoID = (url) => {
+    const extractVideoID = (url) => {
     const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
     const match = url.match(regExp);
     
